@@ -1,0 +1,96 @@
+[viewBag]
+==
+<div class="ui top fixed menu topAdditionalMenu" style="direction:ltr;">
+    <div class="ui container">
+        <a data-request="onSwitchLocale" data-request-data="locale: 'ar'" href="#">ع</a>
+        &nbsp;|&nbsp;
+        <a data-request="onSwitchLocale" data-request-data="locale: 'en'" href="#">En</a>
+        &nbsp;
+        <div class="socialMediaIcons">
+            {% partial 'socialMediaLinks' %}
+        </div>
+        <div class="{{activeLocale=='ar' ? 'left':'right'}} menu">
+            {% partial 'navSearch' %}
+            <a href="{{'account/dashboard'|page}}"> <i class="user red small icon"></i> {{'TopMenu.MemberSpace'|_}}</a>
+            &nbsp;&nbsp;&nbsp;
+            {% if user %}
+            <a data-request="onLogout" data-request-data="redirect: '/'" href="#"><i class="power off red icon"></i></a>
+            {% endif %}
+        </div>
+    </div>
+</div>
+<div class="ui top fixed menu topMainMenu">
+    <div class="ui container">
+        <a class="item" href="{{'home'|page}}">
+            <img class="ui image" src="{{'assets/images/logo.png'|theme}}" width="170px">
+        </a>
+        <div class="right menu">
+            {% partial 'menu-items' items=items %}
+        </div>
+    </div>
+
+</div>
+
+<div class="ui top menu mobileMenu">
+    <div class="ui container">
+        <a class="item" href="{{'home'|page}}">
+            <img class="ui image" src="{{'assets/images/logo.png'|theme}}" width="170px"/>
+        </a>
+        <div class="right menu">
+            <a href="#" onclick="onToggleMenu();"><i class="bars large icon"></i></a>
+        </div>
+    </div>
+</div>
+
+<div class="ui left sidebar vertical menu mobileMenuContent">
+    <div class="item">
+        <img class="ui image" src="{{'assets/images/logo.png'|theme}}" width="170px"/>
+    </div>
+    <div class="item">
+        {% partial 'navSearch' %}
+    </div>
+    {% partial 'menu-items' items=items type="mobile" %}
+    <div class="ui divider"></div>
+    <div class="item">
+        <a data-request="onSwitchLocale" data-request-data="locale: 'ar'" href="#">العربية</a>
+        &nbsp;|&nbsp;
+        <a data-request="onSwitchLocale" data-request-data="locale: 'en'" href="#">English</a>
+        {% if this.page.id in ['account-login',
+        'account-register','account-reset','account-update','account-dashboard','account-application'] %}
+        &nbsp;|&nbsp;
+        <a data-request="onSwitchLocale" data-request-data="locale: 'fr'" href="#">Français</a>
+        {% else %}
+        &nbsp;|&nbsp;
+        <a data-request="onSwitchLocale" data-request-data="locale: 'de'" href="#">Deutsch</a>
+        {% endif %}
+    </div>
+    <div class="item">
+        <a href="{{'account/dashboard'|page}}"> <i class="user red small icon"></i> {{'TopMenu.MemberSpace'|_}}</a>
+    </div>
+
+    {% if user %}
+    <div class="item">
+        <a data-request="onLogout" data-request-data="redirect: '/'" href="#"><i class="power off red icon"></i>
+            {{'TopMenu.Logout'|_}}</a>
+    </div>
+    {% endif %}
+
+    <div class="item">
+        {% partial 'socialMediaLinks' %}
+    </div>
+    <br><br>
+</div>
+
+{% put scripts %}
+<script>
+    function onToggleMenu() {
+        $('.ui.left.sidebar')
+            .sidebar({
+                dimPage: true,
+                transition: 'overlay'
+            })
+            .sidebar('toggle')
+        ;
+    };
+</script>
+{% endput %}

@@ -1,0 +1,26 @@
+fields:
+    property:
+        label: Title
+        span: auto
+        required: 1
+        type: text
+    value:
+        label: Value
+        span: auto
+        required: 1
+        type: number
+    display_order:
+        label: 'Display Order'
+        span: auto
+        required: 1
+        type: number
+        comment: '0 is the highest values then 1, 2, 3 ..etc'
+    icon:
+        label: Icon
+        span: auto
+        type: text
+        comment: 'For the full list of icons visit https://semantic-ui.com/elements/icon.html'
+    step:
+        label: 'Step by which the counter increase every 100 milli seconds'
+        span: auto
+        type: number

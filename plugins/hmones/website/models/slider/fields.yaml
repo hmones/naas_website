@@ -1,0 +1,42 @@
+fields:
+    title:
+        label: Text
+        span: auto
+        type: text
+    subtitle:
+        label: Subtitle
+        span: auto
+        type: text
+    position:
+        label: Position
+        options:
+            main: 'Home Page Top'
+            main2: 'Home Page Below Main Slider'
+        showSearch: true
+        span: auto
+        required: 1
+        type: dropdown
+    display_order:
+        label: 'Order to be displayed'
+        span: auto
+        required: 1
+        type: number
+    btn_txt:
+        label: 'Text for read more button'
+        span: auto
+        type: text
+    link:
+        label: 'Link for read more button'
+        span: auto
+        type: text
+    image:
+        label: Image
+        mode: file
+        fileTypes: 'jpg,jpeg,png,mp4'
+        useCaption: true
+        thumbOptions:
+            mode: crop
+            extension: auto
+        span: auto
+        required: 1
+        type: fileupload

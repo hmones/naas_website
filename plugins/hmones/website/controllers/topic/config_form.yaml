@@ -1,0 +1,10 @@
+name: Topic
+form: $/hmones/website/models/topic/fields.yaml
+modelClass: Hmones\Website\Models\Topic
+defaultRedirect: hmones/website/topic
+create:
+    redirect: 'hmones/website/topic/update/:id'
+    redirectClose: hmones/website/topic
+update:
+    redirect: hmones/website/topic
+    redirectClose: hmones/website/topic

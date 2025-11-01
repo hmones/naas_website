@@ -1,0 +1,21 @@
+columns:
+    property:
+        label: Type
+        type: text
+        searchable: true
+    value:
+        label: Value
+        type: number
+        searchable: true
+    display_order:
+        label: Order
+        type: number
+        sortable: true
+    created_at:
+        label: Created
+        type: timesince
+        sortable: true
+    updated_at:
+        label: Updated
+        type: timesince
+        sortable: true

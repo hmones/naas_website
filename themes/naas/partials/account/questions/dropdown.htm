@@ -1,0 +1,10 @@
+<div class="ui fluid search selection dropdown">
+    <input type="hidden" name="q_{{question.id}}{{question.repeat_active?'[group][1]':''}}[content]" value="{{responses[question.id][0].text.content}}">
+    <i class="dropdown icon"></i>
+    <div class="default text">{{'Pages.Account.Application.SelectDropdown'|_}}</div>
+    <div class="menu">
+        {% for option in question.options %}
+        <div class="item" data-value="{{option.id}}">{{option.option}}</div>
+        {% endfor %}
+    </div>
+</div>

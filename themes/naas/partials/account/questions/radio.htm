@@ -1,0 +1,17 @@
+{% for option in question.options %}
+<div class="padded field">
+    <div class="ui radio checkbox">
+        <input type="radio" {{option.id in responses[question.id][0].text.options?'checked':''}} name="q_{{question.id}}{{question.repeat_active?'[group][1]':''}}[options][]" dataoption="{{option.id}}" value="{{option.id}}">
+        <label>{{option.option}}</label>
+    </div>
+</div>
+{% endfor %}
+{% if question.other_active %}
+<div class="padded field">
+    <div class="ui radio checkbox">
+        <input class="valueOther" type="radio" {{0 in responses[question.id][0].text.options?'checked':''}} name="q_{{question.id}}{{question.repeat_active?'[group][1]':''}}[options][]" value="0"/>
+        <label>{{question.other_text}}</label>
+        <input class="inputOther {{0 in responses[question.id][0].text.options?'':'disabled field'}}" type="text" name="q_{{question.id}}{{question.repeat_active?'[group][1]':''}}[other]" value="{{responses[question.id][0].text.other}}" />
+    </div>
+</div>
+{% endif %}

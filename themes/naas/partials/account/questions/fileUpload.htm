@@ -1,0 +1,5 @@
+{%if responses[question.id][0].text.file %}
+        <div class="ui basic message"><i class="file outline blue small icon"></i><strong>{{'Pages.Account.Application.UploadedFile'|_}}:</strong> {{responses[question.id][0].text.file}}</div>
+{% endif %}
+<i class="right caret blue icon"></i>{{'Pages.Account.Application.UploadAFile'|_}}
+<input type="file" name="q_{{question.id}}{{question.repeat_active?'[group][1]':''}}" accept="{{question.file_type}}" {{question.file_multiple? 'multiple':''}} />

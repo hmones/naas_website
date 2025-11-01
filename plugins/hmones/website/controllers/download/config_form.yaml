@@ -1,0 +1,10 @@
+name: Download
+form: $/hmones/website/models/download/fields.yaml
+modelClass: Hmones\Website\Models\Download
+defaultRedirect: hmones/website/download
+create:
+    redirect: 'hmones/website/download/update/:id'
+    redirectClose: hmones/website/download
+update:
+    redirect: hmones/website/download
+    redirectClose: hmones/website/download

@@ -1,0 +1,87 @@
+fields:
+    name:
+        label: Name
+        span: auto
+        required: 1
+        type: text
+    slug:
+        label: 'Slug (displayed in links)'
+        span: auto
+        required: 1
+        preset:
+            field: name
+            type: slug
+        type: text
+    category:
+        label: Category
+        options:
+            - 'Core team'
+            - 'Steering Committee'
+            - 'Administrative Board'
+            - 'German Board'
+        showSearch: true
+        span: auto
+        required: 1
+        type: dropdown
+    position:
+        label: Position
+        span: auto
+        required: 1
+        type: text
+    bio:
+        label: Biography
+        size: small
+        span: auto
+        required: 1
+        type: richeditor
+    bio_summary:
+        label: 'Biography Summary'
+        size: small
+        span: auto
+        type: richeditor
+    display_order:
+        label: 'Display Order'
+        span: auto
+        required: 1
+        type: number
+        comment: '0 is the highest order, followed by 1, 2, 3 ..etc'
+    img_credits:
+        label: 'Image Credits'
+        span: auto
+        type: text
+    facebook:
+        label: Facebook
+        span: auto
+        type: text
+    email:
+        label: Email
+        span: auto
+        type: text
+    twitter:
+        label: Twitter
+        span: auto
+        type: text
+    instagram:
+        label: Instagram
+        span: auto
+        type: text
+    linkedin:
+        label: Linkedin
+        span: auto
+        type: text
+    website:
+        label: Website
+        span: auto
+        type: text
+    image:
+        label: Image
+        mode: image
+        imageWidth: '300'
+        imageHeight: '300'
+        useCaption: 0
+        thumbOptions:
+            mode: crop
+            extension: auto
+        span: auto
+        required: 1
+        type: fileupload

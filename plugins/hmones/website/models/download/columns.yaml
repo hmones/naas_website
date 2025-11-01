@@ -1,0 +1,19 @@
+columns:
+    identifier:
+        label: Identifier
+        type: text
+        searchable: true
+        sortable: true
+    name:
+        label: Name
+        type: text
+        searchable: true
+        sortable: true
+    display_order:
+        label: 'Display Order'
+        type: number
+        sortable: true
+    updated_at:
+        label: Updated
+        type: timesince
+        sortable: true

@@ -1,0 +1,55 @@
+description = "Displays team member cards in the page"
+
+[viewBag]
+snippetCode = "teammembers"
+snippetName = "Team Members"
+snippetProperties[category][title] = "category"
+snippetProperties[category][type] = "dropdown"
+snippetProperties[category][default] = 0
+snippetProperties[category][options][] = "CoreTeam"
+snippetProperties[category][options][] = "SteeringCommittee"
+snippetProperties[category][options][] = "AdministrativeBoard"
+snippetProperties[category][options][] = "GermanBoard"
+==
+<?php
+use Hmones\Website\Models\Team;
+    public function onStart(){
+        $this['team_members'] = Team::where('category',$this['category'])->orderBy('display_order', 'asc')->get();
+    }
+?>
+==
+<div class="ui four stackable cards">
+{% for team_member in team_members %}
+        <div class="ui raised card" style="box-shadow:none;">
+            <div class="ui move reveal">
+                <div class="visible content" style="width: 100%;">
+                     <div class="image">
+                        <img class="ui image" src="{{team_member.image.getThumb('300','300', {'mode':'crop'})}}" width="100%">
+                      </div>
+                </div>
+                <div class="ui grey inverted basic segment hidden content" style="height:100%;padding:20px!important;">
+                    <a class="ui secondary link" href="{{'team_member'|page({'slug':team_member.slug})}}">
+                        {{html_strip(str_limit(team_member.bio_summary, 200))}}
+                    </a>
+                </div>
+            </div>
+            <div class="content" style="padding-right:0;padding-left:0;">
+              <a class="header" href="{{'team_member'|page({'slug':team_member.slug})}}">{{team_member.name}}</a>
+              <div class="meta">
+                <i class="date" style="word-break: break-all;">{{team_member.position}}</i>
+              </div>
+            </div>
+          </div>
+
+{% endfor %}
+</div>
+
+{% put scripts %}
+<script>
+    $(function(){
+        $('.ui.raised.card')
+            .transition('pulse')
+        ;
+    });
+</script>
+{% endput %}

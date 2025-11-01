@@ -1,0 +1,72 @@
+description = "Displays topic cards in the page"
+
+[viewBag]
+snippetCode = "topics"
+snippetName = "Topics"
+snippetProperties[category][title] = "category"
+snippetProperties[category][type] = "dropdown"
+snippetProperties[category][default] = 0
+snippetProperties[category][options][] = "News"
+snippetProperties[category][options][] = "Programs"
+snippetProperties[category][options][] = "Research and Publications"
+snippetProperties[category][options][] = "Resources"
+snippetProperties[category][options][] = "Malaffat"
+snippetProperties[category][options][] = "Fellowship"
+==
+<?php
+use Hmones\Website\Models\Topic;
+    public function onStart(){
+        $this['topics'] = Topic::where('category',$this['category'])->orderBy('published_at', 'desc')->paginate('9');
+        $category_name = 'news';
+        switch($this['category']){
+            case 1:
+                $category_name = 'programs';
+                break;
+            case 2:
+                $category_name = 'research';
+            case 3:
+                $category_name = 'resources';
+            case 4:
+                $category_name = 'malaffat';
+            case 5:
+                $category_name = 'fellowship';
+            default:
+                $category_name = 'news';
+        }
+        $this['category_name'] = $category_name;
+    }
+?>
+==
+<div class="row"></div>
+<div class="ui {% if topics.count() < 2 %} one {% else %} three {% endif %} stackable cards">
+{% for topic in topics %}
+    <div class="ui raised card" style="box-shadow:none;">
+        <a href="{{'topic'|page({'slug':topic.slug, 'category':category_name})}}">
+            <div class="image">
+                <img class="ui image topicImage" src="{{topic.image.getThumb('300','300', {'mode':'crop'})}}" width="100%">
+            </div>
+            <div class="content" style="padding-left:0;padding-right:0;">
+                <a class="header" href="{{'topic'|page({'slug':topic.slug, 'category':category_name})}}">{{str_limit(topic.title, 60)}}</a>
+            </div>
+        </a>
+    </div>
+{% endfor %}
+</div>
+
+
+<div class="sixteen wide column">
+    <div class="ui padded center aligned basic segment">
+        {{ topics.render('pagination::semantic-ui')|raw }}
+    </div>
+</div>
+
+
+{% put scripts %}
+<script>
+    $(function(){
+        $('.ui.raised.card')
+            .transition('pulse')
+        ;
+    });
+</script>
+{% endput %}

@@ -1,0 +1,20 @@
+columns:
+    identifier:
+        label: Identifier
+        type: number
+        searchable: true
+        sortable: true
+    title:
+        label: Title
+        type: text
+        searchable: true
+        sortable: true
+    display_order:
+        label: display_order
+        type: number
+        searchable: false
+        sortable: true
+    updated_at:
+        label: updated_at
+        type: datetime
+        sortable: true

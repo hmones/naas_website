@@ -1,0 +1,10 @@
+name: Slider
+form: $/hmones/website/models/slider/fields.yaml
+modelClass: Hmones\Website\Models\Slider
+defaultRedirect: hmones/website/slider
+create:
+    redirect: 'hmones/website/slider/update/:id'
+    redirectClose: hmones/website/slider
+update:
+    redirect: hmones/website/slider
+    redirectClose: hmones/website/slider

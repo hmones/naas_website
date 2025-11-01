@@ -1,0 +1,19 @@
+columns:
+  name:
+    label: Name
+    type: text
+    searchable: true
+    sortable: true
+  member_role:
+    label: Role
+    type: number
+    searchable: false
+    sortable: true
+  display_order:
+    label: display_order
+    type: number
+    sortable: true
+  updated_at:
+    label: updated_at
+    type: datetime
+    sortable: true

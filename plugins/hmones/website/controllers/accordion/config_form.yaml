@@ -1,0 +1,10 @@
+name: Accordion
+form: $/hmones/website/models/accordion/fields.yaml
+modelClass: Hmones\Website\Models\Accordion
+defaultRedirect: hmones/website/accordion
+create:
+    redirect: 'hmones/website/accordion/update/:id'
+    redirectClose: hmones/website/accordion
+update:
+    redirect: hmones/website/accordion
+    redirectClose: hmones/website/accordion

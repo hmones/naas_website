@@ -1,0 +1,26 @@
+columns:
+  display_order:
+    label: Order
+    type: number
+    searchable: true
+    sortable: true
+  name:
+    label: Name
+    type: text
+    searchable: true
+    sortable: true
+  position:
+    label: Position
+    type: text
+    searchable: true
+    sortable: true
+  team_category:
+    label: Category
+    type: number
+    searchable: false
+    sortable: false
+  updated_at:
+    label: Updated
+    type: timesince
+    searchable: false
+    sortable: true

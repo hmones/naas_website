@@ -1,0 +1,52 @@
+description = "Displays member cards in the page"
+
+[viewBag]
+snippetCode = "members"
+snippetName = "Members"
+snippetProperties[role][title] = "role"
+snippetProperties[role][type] = "dropdown"
+snippetProperties[role][default] = 0
+snippetProperties[role][options][] = "Core"
+==
+<?php
+use Hmones\Website\Models\Member;
+    public function onStart(){
+        $this['members'] = Member::where('role',$this['role'])->orderBy('display_order', 'asc')->get();
+    }
+?>
+==
+<div class="ui four stackable cards">
+{% for member in members %}
+        <div class="ui raised card" style="box-shadow:none;">
+            <div class="ui move reveal">
+                <div class="visible content" style="width: 100%;">
+                     <div class="image">
+                        <img class="ui image" src="{{member.image.getThumb('300','300', {'mode':'crop'})}}" width="100%">
+                      </div>
+                </div>
+                <div class="ui grey inverted basic padded segment hidden content" style="height:100%;padding:20px!important">
+                    <a class="ui secondary link" href="{{'member'|page({'slug':member.slug})}}">
+                        {{html_strip(str_limit(member.content, 200))}}
+                    </a>
+                </div>
+            </div>
+            <div class="content" style="padding-right:0;padding-left:0;">
+              <a class="header" href="{{'member'|page({'slug':member.slug})}}">{{member.name}}</a>
+              <div class="meta">
+                <i class="date">{{member.location}}</i>
+              </div>
+            </div>
+          </div>
+{% endfor %}
+</div>
+
+
+{% put scripts %}
+<script>
+    $(function(){
+        $('.ui.raised.card')
+            .transition('pulse')
+        ;
+    });
+</script>
+{% endput %}

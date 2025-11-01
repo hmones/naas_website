@@ -1,0 +1,30 @@
+columns:
+  id:
+    label: ID
+    type: number
+    searchable: true
+    sortable: true
+  title:
+    label: Title
+    type: text
+    searchable: true
+    sortable: true
+  topic_category:
+    label: Category
+    type: number
+    searchable: false
+    sortable: true
+  published_at:
+    label: Published
+    type: datetime
+    sortable: true
+  created_at:
+    label: Created
+    type: timesince
+    searchable: false
+    sortable: true
+  updated_at:
+    label: Updated
+    type: timesince
+    searchable: false
+    sortable: true

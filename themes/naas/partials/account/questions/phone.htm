@@ -1,0 +1,29 @@
+<div class="two fields">
+    <div class="field">
+        <label>{{'Pages.Account.Application.CountryCode'|_}}</label>
+        <div class="ui fluid search selection dropdown">
+            <input type="hidden" id="q_{{question.id}}_code" name="q_{{question.id}}{{question.repeat_active?'[group][1]':''}}[phone][code]" value="{{responses[question.id][0].text.phone.code}}" />
+            <i class="dropdown icon"></i>
+            <div class="default text">{{'Pages.Account.Application.SelectCountry'|_}}</div>
+            <div class="menu">
+                {% for country in countries %}
+                <div class="item" data-value="{{country[2]}}"><i class="{{country[1]}} flag"></i>{{country[0]}}
+                    (+{{country[2]}})
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    <div class="field">
+        <label for="q_{{question.id}}_phone">{{'Pages.Account.Application.PhoneNumber'|_}}</label>
+        <input 
+            type="text" 
+            id="q_{{question.id}}_phone" 
+            placeholder="e.g. 15444444499" 
+            maxlength="15" 
+            name="q_{{question.id}}{{question.repeat_active?'[group][1]':''}}[phone][number]" 
+            value="{{responses[question.id][0].text.phone.number}}" 
+            validation="^[0-9]{0,25}$"
+        />
+    </div>
+</div>

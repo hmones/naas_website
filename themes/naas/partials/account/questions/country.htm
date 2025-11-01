@@ -1,0 +1,10 @@
+<div class="ui fluid search selection dropdown">
+    <input type="hidden" name="q_{{question.id}}{{question.repeat_active?'[group][1]':''}}[content]" value={{responses[question.id][0].text.content}}>
+    <i class="dropdown icon"></i>
+    <div class="default text">{{'Pages.Account.Application.SelectCountry'|_}}</div>
+    <div class="menu">
+        {% for country in countries %}
+        <div class="item" data-value="{{country[1]}}"><i class="{{country[1]}} flag"></i>{{country[0]}}</div>
+        {% endfor %}
+    </div>
+</div>

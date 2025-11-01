@@ -1,54 +1,42 @@
 ##
 description = "Default layout"
 ==
-<!DOCTYPE html>
-<html>
-    <head>
-        {% partial 'site/head/head-meta' %}
-        <title>October CMS - {{ this.page.meta_title ?: placeholder('pageTitle') }}</title>
-        <meta name="description" content="{{ this.page.meta_description }}">
-        <meta name="title" content="{{ this.page.meta_title }}">
-        {% partial 'site/head/head-links' %}
-        {% partial 'site/head/head-scripts' %}
-        {% partial 'site/head/analytics-code' %}
-        <meta name="turbo-visit-control" content="reload" />
-    </head>
-    <body class="layout-home">
+<! DOCTYPE html>
+<html {% if activeLocale =='ar'%} dir="rtl" lang="ar" {% endif %}>
 
-        <!-- Nav -->
-        <nav id="layout-nav" class="navbar navbar-expand-lg navbar-dark">
-            <div class="container">
-                <a class="navbar-brand" href="{{ 'index'|page }}">
-                    <img src="{{ 'assets/images/logo.svg'|theme }}" alt="October CMS Demo" width="190" />
-                </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse">
-                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                        {% partial 'site/nav-links' %}
-                    </ul>
-                </div>
-            </div>
-        </nav>
+<head>
+    <title>NAAS network homepage </title>
+    {% if activeLocale == 'ar' %}
+    <link rel="stylesheet" href="{{['assets/dist/semantic.rtl.min.css','assets/css/styles.css','assets/css/rtl.css']|theme}}">
+    {% else %}
+    <link rel="stylesheet" href="{{['assets/dist/semantic.min.css','assets/css/styles.css']|theme}}">
+    {% endif %}
+    <link rel="shortcut icon" href="{{'assets/fav.png'|theme}}" type="image/png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{'assets/slick/slick.css'|theme}}"/>
+    <link rel="stylesheet" type="text/css" href="{{'assets/slick/slick-theme.css'|theme}}"/>
+    {% styles %}
+</head>
 
-        {% partial 'site/flash-messages' %}
+<body>
+<!-- Nav -->
+{% partial 'navigation' items=staticMenu.menuItems %}
 
-        <!-- Content -->
-        <section id="layout-content">
-            {% page %}
-        </section>
+<div class="pusher">
+    <div class="ui container" id="FlashMessage">
+        {% partial 'flash' %}
+    </div>
+    {% page %}
+    {% component 'cookiesBar' %}
+    {% partial 'footer' %}
 
-        <!-- Footer -->
-        <footer id="layout-footer">
-            {% partial 'site/footer' %}
-        </footer>
+</div>
 
-        <!-- Mobile -->
-        {% partial 'site/nav-mobile' %}
+<script type="text/javascript"
+        src="{{['assets/js/jquery-3.5.1.min.js','assets/dist/semantic.min.js', 'assets/slick/slick.min.js']|theme}}">
+</script>
+{% framework %}
+{% scripts %}
+</body>
 
-        <!-- How the page is made -->
-        {% partial 'site/how-its-made' %}
-
-    </body>
 </html>

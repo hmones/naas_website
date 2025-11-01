@@ -1,0 +1,10 @@
+name: Statistic
+form: $/hmones/website/models/statistic/fields.yaml
+modelClass: Hmones\Website\Models\Statistic
+defaultRedirect: hmones/website/statistic
+create:
+    redirect: 'hmones/website/statistic/update/:id'
+    redirectClose: hmones/website/statistic
+update:
+    redirect: hmones/website/statistic
+    redirectClose: hmones/website/statistic

@@ -1,0 +1,23 @@
+v1.0.1:
+    - 'Initialize plugin'
+v1.0.2:
+    - 'Created table hmones_website_accordions'
+    - builder_table_create_hmones_website_accordions.php
+v1.0.3:
+    - 'Created table hmones_website_downloads'
+    - builder_table_create_hmones_website_downloads.php
+v1.0.4:
+    - 'Created table hmones_website_members'
+    - builder_table_create_hmones_website_members.php
+v1.0.5:
+    - 'Created table hmones_website_slider'
+    - builder_table_create_hmones_website_slider.php
+v1.0.6:
+    - 'Created table hmones_website_statistics'
+    - builder_table_create_hmones_website_statistics.php
+v1.0.7:
+    - 'Created table hmones_website_teams'
+    - builder_table_create_hmones_website_teams.php
+v1.0.8:
+    - 'Created table hmones_website_topics'
+    - builder_table_create_hmones_website_topics.php

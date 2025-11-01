@@ -1,0 +1,75 @@
+fields:
+    name:
+        label: Name
+        span: auto
+        required: 1
+        type: text
+    slug:
+        label: 'Slug (displayed in links)'
+        span: auto
+        required: 1
+        preset:
+            field: name
+            type: slug
+        type: text
+    display_order:
+        label: 'Display Order'
+        span: auto
+        required: 1
+        type: number
+    role:
+        label: 'Membership Type'
+        options:
+            - Core
+            - Affiliate
+        showSearch: true
+        span: auto
+        required: 1
+        type: dropdown
+    content:
+        label: Content
+        size: small
+        span: full
+        required: 1
+        stretch: 0
+        type: richeditor
+    email:
+        label: Email
+        span: auto
+        type: text
+    location:
+        label: Location
+        span: auto
+        type: text
+    facebook:
+        label: Facebook
+        span: auto
+        type: text
+    instagram:
+        label: Instagram
+        span: auto
+        type: text
+    twitter:
+        label: Twitter
+        span: auto
+        type: text
+    youtube:
+        label: YouTube
+        span: auto
+        type: text
+    website:
+        label: Website
+        span: auto
+        type: text
+    image:
+        label: Image
+        mode: image
+        imageWidth: '150'
+        imageHeight: '150'
+        useCaption: true
+        thumbOptions:
+            mode: crop
+            extension: auto
+        span: auto
+        required: 1
+        type: fileupload

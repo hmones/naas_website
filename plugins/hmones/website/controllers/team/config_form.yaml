@@ -1,0 +1,10 @@
+name: Team
+form: $/hmones/website/models/team/fields.yaml
+modelClass: Hmones\Website\Models\Team
+defaultRedirect: hmones/website/team
+create:
+    redirect: 'hmones/website/team/update/:id'
+    redirectClose: hmones/website/team
+update:
+    redirect: hmones/website/team
+    redirectClose: hmones/website/team

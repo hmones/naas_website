@@ -1,0 +1,96 @@
+<div class="two fields">
+    <div class="field">
+        <label>{{'Pages.Account.Application.Language'|_}}</label>
+        <div class="ui fluid search selection dropdown">
+            <input type="hidden" class="q_language" name="q_{{question.id}}{{question.repeat_active?'[group][1]':''}}[language][name]">
+            <i class="dropdown icon"></i>
+            <div class="default text">{{'Pages.Account.Application.LanguageSelect'|_}}</div>
+            <div class="menu">
+                <div class="item" data-value="English">English</div>
+                <div class="item" data-value="Arabic">العربية</div>
+                <div class="item" data-value="French">Français</div>
+                <div class="item" data-value="Abkhaz">Abkhaz</div>
+                <div class="item" data-value="Afrikaans">Afrikaans</div>
+                <div class="item" data-value="Albanian">Albanian</div>
+                <div class="item" data-value="Sign Language">Sign Language</div>
+                <div class="item" data-value="Amharic">Amharic</div>
+                <div class="item" data-value="Armenian">Armenian</div>
+                <div class="item" data-value="Basque">Basque</div>
+                <div class="item" data-value="Bosnian">Bosnian</div>
+                <div class="item" data-value="Bulgarian">Bulgarian</div>
+                <div class="item" data-value="Cantonese">Cantonese</div>
+                <div class="item" data-value="Catalan">Catalan</div>
+                <div class="item" data-value="Chinese">Chinese</div>
+                <div class="item" data-value="Crimean Tatar">Crimean Tatar</div>
+                <div class="item" data-value="Croatian">Croatian</div>
+                <div class="item" data-value="Czech">Czech</div>
+                <div class="item" data-value="Danish">Danish</div>
+                <div class="item" data-value="Dutch">Dutch</div>
+                <div class="item" data-value="Estonian">Estonian</div>
+                <div class="item" data-value="Filipino">Filipino</div>
+                <div class="item" data-value="Finnish">Finnish</div>
+                <div class="item" data-value="Georgian">Georgian</div>
+                <div class="item" data-value="German">German</div>
+                <div class="item" data-value="Greek, Modern">Greek</div>
+                <div class="item" data-value="Hebrew">Hebrew</div>
+                <div class="item" data-value="Hindi">Hindi</div>
+                <div class="item" data-value="Hungarian">Hungarian</div>
+                <div class="item" data-value="Icelandic">Icelandic</div>
+                <div class="item" data-value="Indonesian">Indonesian</div>
+                <div class="item" data-value="Irish">Irish</div>
+                <div class="item" data-value="Italian">Italian</div>
+                <div class="item" data-value="Japanese">Japanese</div>
+                <div class="item" data-value="Kinyarwanda">Kinyarwanda</div>
+                <div class="item" data-value="Korean">Korean</div>
+                <div class="item" data-value="Kurdish/Kurdî">Kurdish/Kurdî</div>
+                <div class="item" data-value="Latin">Latin</div>
+                <div class="item" data-value="Macedonian">Macedonian</div>
+                <div class="item" data-value="Malay">Malay</div>
+                <div class="item" data-value="Malayalam">Malayalam</div>
+                <div class="item" data-value="Mandarin">Mandarin</div>
+                <div class="item" data-value="Mauritian Creole">Mauritian Creole</div>
+                <div class="item" data-value="Mongolian">Mongolian</div>
+                <div class="item" data-value="Norwegian">Norwegian</div>
+                <div class="item" data-value="Pashto">Pashto</div>
+                <div class="item" data-value="Persian">Persian</div>
+                <div class="item" data-value="Polish">Polish</div>
+                <div class="item" data-value="Portuguese">Portuguese</div>
+                <div class="item" data-value="Romanian">Romanian</div>
+                <div class="item" data-value="Russian">Russian</div>
+                <div class="item" data-value="Serbian">Serbian</div>
+                <div class="item" data-value="Slovak">Slovak</div>
+                <div class="item" data-value="Slovene">Slovene</div>
+                <div class="item" data-value="Spanish">Spanish</div>
+                <div class="item" data-value="Swahili">Swahili</div>
+                <div class="item" data-value="Swedish">Swedish</div>
+                <div class="item" data-value="Tamil">Tamil</div>
+                <div class="item" data-value="Thai">Thai</div>
+                <div class="item" data-value="Turkish">Turkish</div>
+                <div class="item" data-value="Ukrainian">Ukrainian</div>
+                <div class="item" data-value="Upper Sorbian">Upper Sorbian</div>
+                <div class="item" data-value="Urdu">Urdu</div>
+                <div class="item" data-value="Uyghur">Uyghur</div>
+                <div class="item" data-value="Uzbek">Uzbek</div>
+                <div class="item" data-value="Venetian">Venetian</div>
+                <div class="item" data-value="Vietnamese">Vietnamese</div>
+                <div class="item" data-value="Welsh">Welsh</div>
+                <div class="item" data-value="Yiddish">Yiddish</div>
+                <div class="item" data-value="Other">Other/أخرى</div>
+            </div>
+        </div>
+    </div>
+    <div class="field">
+        <label>{{'Pages.Account.Application.Percentage'|_}}</label>
+        <div class="ui icon input">
+            <input 
+                type="text"
+                class="q_percentage"
+                placeholder="e.g. 99"
+                maxlength="3"
+                value=""
+                name="q_{{question.id}}{{question.repeat_active?'[group][1]':''}}[language][percentage]"
+                validation="^(100|[0-9]?[0-9])$">
+            <i>%</i>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,62 @@
+<div class="{{(question.required) and (not question.cond_option_id) ? 'required':''}} {{question.add_css}} {{responses[question.id][0].prefilled ? 'prefilled':''}} field" 
+    id="field_{{question.id}}" 
+    type="{{question.type}}"
+    data-condition="{{question.cond_option_id}}" 
+    style="{{question.cond_option_id?'display:none;':''}}"
+    data-required="{{question.required ? 'yes':'no'}}"
+    data-theme="{{question.theme.display_order}}"
+    data-title="{{question.order}}"
+    {% if question.repeat_active and question.group %}
+        group={{question.group}}
+        data-repeat-btn="{{question.repeat_text}}"
+    {% endif %}>
+    {% partial 'account/questions/header'%}
+    <label for="q_{{question.id}}">
+        <i class="{{activeLocale == 'ar'? 'left':'right'}} caret red icon"></i> {{question.question}} &nbsp;
+        {% if question.description %}
+        <div class="ui icon circular grey mini basic button questionTooltip" data-html="<p>{{question.description}}</p>" data-inverted="" data-variation="wide">
+            <i class="question black icon"></i>
+        </div>
+        {% endif %}
+    </label>
+    <!-- Text box -->
+    {% if question.type == 0 or question.type == 6 %}
+    <input type="text" name="q_{{question.id}}{{question.repeat_active?'[group][1]':''}}[content]" id="q_{{question.id}}" value="{{responses[question.id][0].text.content}}"
+         {% if question.validation|length > 2%} validation={{question.validation}} {% endif %}  />
+    <!-- Text area -->
+    {% elseif question.type == 1 %}
+    <textarea name="q_{{question.id}}{{question.repeat_active?'[group][1]':''}}[content]" id="q_{{question.id}}" cols="30" rows="3"
+    {% if question.validation|length > 2%} validation={{question.validation}} {% endif %}>{{responses[question.id][0].text.content}}</textarea>
+    <!-- Checkbox -->
+    {% elseif question.type == 2 %}
+    {% partial 'account/questions/checkbox' %}
+    <!-- Radio -->
+    {% elseif question.type == 3 %}
+    {% partial 'account/questions/radio' %}
+    <!-- Dropdown -->
+    {% elseif question.type == 4 %}
+    {% partial 'account/questions/dropdown' %}
+    <!-- Attachment -->
+    {% elseif question.type == 5 %}
+    {% partial 'account/questions/fileUpload' %}
+    <!-- Country -->
+    {% elseif question.type == 7 %}
+    {% partial 'account/questions/country' %}
+    <!-- Phone -->
+    {% elseif question.type == 8 %}
+    {% partial 'account/questions/phone' %}
+    <!-- Language Percentage -->
+    {% elseif question.type == 9 %}
+    <div class="language_percentage">
+        {% partial 'account/questions/languagePercentage' %}
+    </div>
+    {% endif %}
+</div>
+
+{% if question.add_script %}
+    {% put scripts %}
+    <script>
+        {{ question.add_script |raw }}
+    </script>
+    {% endput %}
+{% endif %}

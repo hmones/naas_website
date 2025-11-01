@@ -1,0 +1,26 @@
+fields:
+    title:
+        label: Title
+        span: auto
+        required: 1
+        type: text
+    display_order:
+        label: 'Display Order'
+        span: auto
+        required: 1
+        type: number
+    identifier:
+        label: 'Identifier (used to determine which page to list this accordion item)'
+        span: auto
+        required: 1
+        type: text
+    is_open:
+        label: 'Open by default?'
+        span: auto
+        required: 1
+        type: switch
+    content:
+        label: Content
+        size: large
+        span: full
+        type: richeditor

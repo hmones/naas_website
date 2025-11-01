@@ -1,0 +1,54 @@
+description = "Displaying Statistics on the Right hand Side"
+
+[viewBag]
+snippetCode = "statistics"
+snippetName = "Sidebar: Statistics"
+==
+<?php
+use Hmones\Website\Models\Statistic;
+public function onStart(){
+    $this['statistics'] = Statistic::orderBy('display_order', 'asc')->get();
+}
+?>
+==
+<div id="statistics" style="display: none;">
+    <h3>{{'Sidebar.Statistics.Title'|_}}</h3>
+    <div class="ui divider"></div>
+    <div class="ui hidden divider"></div>
+    {% for statistic in statistics %}
+        <div class="ui basic message" style="padding: 0px;">
+            <div class="ui two column grid">
+                <div class="center aligned column">
+                    <i class="{{statistic.icon}} huge icon" style="font-size: 50px;"></i>
+                </div>
+                <div class="center aligned column">
+                    <span id="statistic_{{statistic.id}}" style="font-size: 40px;font-weight: 700;color:#ed1d24;">0</span>
+                    <h4 style="margin-top:15px;"> {{statistic.property}}</h4>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+    <div class="ui hidden divider"></div>
+</div>
+
+{% put scripts %}
+<script>
+    $(function(){
+        var duration = 3000;
+        {% for statistic in statistics %}
+            var {{'statistic_' ~ statistic.id}} = parseInt('{{statistic.value}}');
+            var {{'statistic_counter_' ~ statistic.id}} = 0;
+            var {{'statistic_timer' ~ statistic.id }} = setInterval(function(){
+                increment_{{statistic.id}}();
+            }, Math.ceil(duration/{{'statistic_' ~ statistic.id}}));
+            function increment_{{statistic.id}}(){
+                $('#statistic_'+'{{statistic.id}}').html({{'statistic_counter_' ~ statistic.id}});
+                {{'statistic_counter_' ~ statistic.id}} += {{statistic.step}};
+                if({{'statistic_counter_' ~ statistic.id}} > {{'statistic_' ~ statistic.id}}){
+                    clearInterval({{'statistic_timer' ~ statistic.id }});
+                }
+            }
+        {% endfor %}
+    });
+</script>
+{% endput %}

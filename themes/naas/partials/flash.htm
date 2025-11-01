@@ -1,0 +1,17 @@
+{% flash %}
+    <div class="ui {{ type == 'error' ? 'negative' : type }} message">{{ message }}</div>
+{% endflash %}
+
+{% put scripts %}
+<script>
+    $(window).on('ajaxErrorMessage', function(event, message){
+
+        // This can be any custom JavaScript you want
+        $('#FlashMessage').html('<div class="ui negative message">'+ message +'</div>');
+
+        // This will stop the default alert() message
+        event.preventDefault();
+
+    })
+</script>
+{% endput %}

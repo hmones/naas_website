@@ -1,0 +1,30 @@
+description = "Accordion"
+
+[viewBag]
+snippetCode = "accordion"
+snippetName = "Accordion"
+snippetProperties[accordion][title] = "accordionIdentifier"
+snippetProperties[accordion][type] = "string"
+snippetProperties[accordion][default] = ""
+snippetProperties[accordion][options][] = ""
+==
+<?php
+use Hmones\Website\Models\Accordion;
+public function onStart(){
+    $this['accordion_items'] = Accordion::where('identifier', $this['accordion'])->orderBy('display_order', 'asc')->get();
+}
+?>
+==
+<div class="ui styled fluid accordion">
+    {% for item in accordion_items %}
+        <div class="{{item.is_open ? 'active'}} title">
+            <i class="dropdown icon"></i>
+            {{item.title}}
+        </div>
+        <div class="{{item.is_open ? 'active'}} content">
+            <div class="ui basic padded segment">
+                {{item.content|raw}}
+            </div>
+        </div>
+    {% endfor %}
+</div>

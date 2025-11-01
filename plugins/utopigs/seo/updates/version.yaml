@@ -1,0 +1,31 @@
+v1.0.1:
+    - First version of Utopigs Seo plugin
+    - create_data_table.php
+v1.0.2: Fix bug with elements with nested items
+v1.1.0:
+    - Add sitemap functionality. Fix some bugs with nested items.
+    - create_sitemaps_table.php
+v1.1.1: Fix browser render issue
+v1.1.2: Undo last change to fix Google Search Console sitemap fetch issues
+v1.1.3: Add a sitemap-debug.xml that renders ok (using https protocol for the namespace attributes) to be able to debug sitemap issues visually
+v1.1.4: Fix bug model image not showing
+v1.1.5: Fix bug with nested categories
+v1.1.6: Try to retrieve image from defaults if not specified. Autofill properties for blog post and category pages
+v1.1.7: Add translations for catalan
+v1.1.8: Added Russian localization
+v1.1.9: Fixes saving sitemap in October CMS v2
+v1.1.10: Fix redirect on create and update SEO data
+v1.1.11: Compatibility with October CMS v3
+v1.1.12: Fix sitemaps in October CMS v3
+v1.1.13: Fix bugs in October CMS v2
+v1.1.14: Fixes in demo data import for October CMS 3.6
+v1.1.15: Allow to remove the append or prepend text in the title of pages with SEO data
+v1.1.16: getSeoPageType method to override fixed property dynamically
+v1.1.17: Fix for external images (urls)
+v1.1.18: Fix sitemap generation for october 3
+v1.1.19: Fix bug with translations in october 3
+v1.1.20: Compatibility fixes for October v3.7
+v1.1.21: Fix duplicated suffix in pages with mapped seo data from model defaults
+v1.1.22: Update event type to launch, fix sitemap definition view
+v1.1.23: Fix bug when first type in dropdown is not cms-page
+v1.1.24: Reset current app locale when SEO data has not been found

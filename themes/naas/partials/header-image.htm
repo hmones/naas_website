@@ -1,0 +1,22 @@
+description = "Header image"
+
+[viewBag]
+snippetCode = "header-image"
+snippetName = "Header Image"
+snippetProperties[headerImage][title] = "Image"
+snippetProperties[headerImage][type] = "string"
+snippetProperties[headerImage][default] = ""
+snippetProperties[headerImage][options][] = ""
+snippetProperties[headerImageCredits][title] = "Image Credits"
+snippetProperties[headerImageCredits][type] = "string"
+snippetProperties[headerImageCredits][default] = ""
+snippetProperties[headerImageCredits][options][] = ""
+==
+{% if headerImage %}
+    <div style="margin-bottom:50px;">
+        <img src="{{headerImage}}" alt="{{headerImageCredits}}" class="ui image"/>
+        {% if headerImageCredits %}
+            <small style="color:grey;">{{headerImageCredits}}</small>
+        {% endif %}
+    </div>
+{% endif %}

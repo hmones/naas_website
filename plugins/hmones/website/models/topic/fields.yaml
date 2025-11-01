@@ -1,0 +1,53 @@
+fields:
+    title:
+        label: Title
+        span: auto
+        required: 1
+        type: text
+    slug:
+        label: 'Slug (displayed in link)'
+        span: auto
+        required: 1
+        preset:
+            field: title
+            type: slug
+        type: text
+    category:
+        label: Category
+        options:
+            - News
+            - Programs
+            - 'Research and Publications'
+            - Resources
+            - Malaffat
+            - Fellowship
+        showSearch: true
+        span: auto
+        required: 1
+        type: dropdown
+    published_at:
+        label: 'Published at'
+        mode: datetime
+        minDate: '2010-01-01'
+        span: auto
+        required: 1
+        type: datepicker
+    content:
+        label: Content
+        size: large
+        span: full
+        type: richeditor
+    image:
+        label: Image
+        mode: image
+        useCaption: 0
+        thumbOptions:
+            mode: crop
+            extension: auto
+        span: auto
+        required: 1
+        type: fileupload
+    img_credits:
+        label: 'Image Credits'
+        span: auto
+        type: text

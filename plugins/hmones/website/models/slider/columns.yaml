@@ -1,0 +1,19 @@
+columns:
+    title:
+        label: Title
+        type: text
+        searchable: true
+        sortable: true
+    position:
+        label: Position
+        type: text
+        searchable: true
+        sortable: true
+    display_order:
+        label: 'Display Order'
+        type: number
+        sortable: true
+    created_at:
+        label: Created
+        type: timesince
+        sortable: true

@@ -1,40 +1,44 @@
 ##
 description = "Default layout"
 ==
-<!DOCTYPE html>
-<html>
-    <head>
-        {% partial 'site/head/head-meta' %}
-        <title>October CMS - {{ this.page.meta_title ?: placeholder('pageTitle') }}</title>
-        <meta name="description" content="{{ this.page.meta_description }}">
-        <meta name="title" content="{{ this.page.meta_title }}">
-        {% partial 'site/head/head-links' %}
-        {% partial 'site/head/head-scripts' %}
-        {% partial 'site/head/analytics-code' %}
-    </head>
-    <body class="{{ 'page-'~this.page.id }}">
+<! DOCTYPE html>
+<html {% if activeLocale =='ar'%} dir="rtl" lang="ar" {% endif %}>
 
-        <!-- Header -->
-        <header id="layout-header">
-            {% partial 'site/header' %}
-        </header>
+<head>
+    <title>NAAS network</title>
+    {% if activeLocale == 'ar' %}
+    <link rel="stylesheet" href="{{['assets/dist/semantic.rtl.min.css','assets/css/styles.css','assets/css/rtl.css']|theme}}">
+    {% else %}
+    <link rel="stylesheet" href="{{['assets/dist/semantic.min.css','assets/css/styles.css']|theme}}">
+    {% endif %}
+    <link rel="shortcut icon" href="{{'assets/fav.png'|theme}}" type="image/png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% styles %}
+</head>
 
-        {% partial 'site/flash-messages' %}
+<body>
+<!-- Nav -->
+{% partial 'navigation' items=staticMenu.menuItems %}
 
-        <!-- Content -->
-        <section id="layout-content">
-            {% page %}
-        </section>
+<div class="pusher">
+    <div class="ui hidden divider"></div>
+    <div class="ui hidden divider"></div>
+    <div class="ui hidden divider"></div>
+    <div class="ui hidden divider"></div>
+    <div class="ui container" id="FlashMessage">
+        {% partial 'flash' %}
+    </div>
+    <div class="ui container" style="min-height: 60vh;">
+        {% page %}
+    </div>
+    {% partial 'footer' %}
+    {% component 'cookiesBar' %}
+</div>
 
-        <!-- Footer -->
-        <footer id="layout-footer">
-            {% partial 'site/footer' %}
-        </footer>
+<script type="text/javascript"
+        src="{{['assets/js/jquery-3.5.1.min.js','assets/dist/semantic.min.js']|theme}}"></script>
+{% framework %}
+{% scripts %}
+</body>
 
-        <!-- Mobile -->
-        {% partial 'site/nav-mobile' %}
-
-        <!-- How the page is made -->
-        {% partial 'site/how-its-made' %}
-    </body>
 </html>

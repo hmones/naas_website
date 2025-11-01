@@ -1,0 +1,40 @@
+plugin:
+    name: 'hmones.website::lang.plugin.name'
+    description: 'hmones.website::lang.plugin.description'
+    author: hmones
+    icon: oc-icon-desktop
+    homepage: ''
+navigation:
+    website:
+        label: Website
+        url: hmones/website/topic
+        icon: icon-desktop
+        sideMenu:
+            topics:
+                label: Topics/Articles
+                url: hmones/website/topic
+                icon: icon-file-text-o
+            members-profiles:
+                label: Members
+                url: hmones/website/member
+                icon: icon-users
+            naas-team:
+                label: 'NAAS Team'
+                url: hmones/website/team
+                icon: icon-user-secret
+            sliders:
+                label: Slider
+                url: hmones/website/slider
+                icon: icon-image
+            statistics:
+                label: Statistics
+                url: hmones/website/statistic
+                icon: icon-bar-chart-o
+            downloads:
+                label: Downloads
+                url: hmones/website/download
+                icon: icon-download
+            accordions:
+                label: Accordions
+                url: hmones/website/accordion
+                icon: icon-list

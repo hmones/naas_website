@@ -1,0 +1,10 @@
+{% if question.header %}
+<div class="ui header question">
+    <div class="content">
+        {{question.header}}
+        {% if question.subheader %}
+        <div class="sub header">{{question.subheader}}</div>
+        {% endif %}
+    </div>
+</div>
+{% endif %}

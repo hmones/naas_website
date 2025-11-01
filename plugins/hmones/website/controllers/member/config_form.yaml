@@ -1,0 +1,10 @@
+name: Member
+form: $/hmones/website/models/member/fields.yaml
+modelClass: Hmones\Website\Models\Member
+defaultRedirect: hmones/website/member
+create:
+    redirect: 'hmones/website/member/update/:id'
+    redirectClose: hmones/website/member
+update:
+    redirect: hmones/website/member
+    redirectClose: hmones/website/member
