@@ -1,0 +1,59 @@
+title = "Team Member"
+url = "/topic/:category/:slug"
+layout = "page-no-sidebar"
+is_hidden = 0
+==
+<?php
+use Hmones\Website\Models\Topic;
+    public function onStart(){
+        $slug = $this->param('slug');
+        $topic = Topic::where('slug', $slug)->first();
+        if($topic){
+            $this['topic'] = $topic;
+            $this['topics'] = Topic::where('category', $topic->category)->orderBy('published_at', 'desc')->take(5)->get();
+        }else{
+            return Redirect::to('/');
+        }
+    }
+?>
+==
+<div class="ui stackable grid">
+<div class="twelve wide column">
+    <div class="ui header">{{topic.title}}</div>
+    <small class="date"> <i class="calendar outline icon"></i> {{topic.published_at | date('d F Y')}}</small>
+    <br/><br/>
+    <img src="{{topic.image.getThumb(830,600,{'mode':'crop'})}}" alt="{{topic.title}}" class="ui image">
+    <br/>
+    {% if topic.img_credits %}
+        <small class="date"> <i class="image outline icon"></i> {{topic.img_credits}}</small>
+        <br/><br/>
+    {% endif %}
+
+    <div>
+        {{topic.content|raw}}
+    </div>
+</div>
+<div class="four wide column">
+    <div class="ui header">{{topic.topic_category}}</div>
+    <div class="ui divider"></div>
+    <div class="ui relaxed divided list">
+        {% for related_topic in topics %}
+            <div class="item">
+                <img src="{{related_topic.image.getThumb(50,50, {'mode':'crop'})}}" alt="{{related_topic.title}}" class="ui image">
+                <div class="content">
+                    <a class="header" style="margin-bottom:6px;" href="{{'topic'|page({'category':this.param.category, 'slug':related_topic.slug})}}">{{str_limit(related_topic.title, 21)}}</a>
+                    <div class="description"> <i class="clock outline icon"></i>{{related_topic.published_at.diffForHumans()}}</div>
+                </div>
+            </div>
+        {% endfor %}
+      </div>
+</div>
+</div>
+
+{% put scripts %}
+<script>
+    $(function(){
+        $('div.ui.center.aligned.header').html('{{topic.topic_category}}');
+    });
+</script>
+{% endput %}

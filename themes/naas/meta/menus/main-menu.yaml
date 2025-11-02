@@ -1,0 +1,333 @@
+items:
+    -
+        title: mainmenu.about
+        nesting: 0
+        type: static-page
+        url: null
+        code: ''
+        reference: about
+        cmsPage: null
+        replace: 0
+        viewBag:
+            locale:
+                ar:
+                    title: ''
+                    url: ''
+                fr:
+                    title: ''
+                    url: ''
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+        items:
+            -
+                title: mainmenu.about.naas
+                nesting: 0
+                type: static-page
+                url: null
+                code: ''
+                reference: about
+                cmsPage: null
+                replace: 0
+                viewBag:
+                    locale:
+                        ar:
+                            title: ''
+                            url: ''
+                        fr:
+                            title: ''
+                            url: ''
+                    isHidden: '0'
+                    cssClass: ''
+                    isExternal: '0'
+            -
+                title: mainmenu.about.history
+                nesting: 0
+                type: static-page
+                url: null
+                code: ''
+                reference: history
+                cmsPage: null
+                replace: 0
+                viewBag:
+                    locale:
+                        ar:
+                            title: ''
+                            url: ''
+                        fr:
+                            title: ''
+                            url: ''
+                    isHidden: '0'
+                    cssClass: ''
+                    isExternal: '0'
+            -
+                title: mainmenu.about.supporters
+                nesting: 0
+                type: static-page
+                url: null
+                code: ''
+                reference: supporters
+                cmsPage: null
+                replace: 0
+                viewBag:
+                    locale:
+                        ar:
+                            title: ''
+                            url: ''
+                        fr:
+                            title: ''
+                            url: ''
+                    isHidden: '0'
+                    cssClass: ''
+                    isExternal: '0'
+            -
+                title: mainmenu.about.adminboard
+                nesting: 0
+                type: static-page
+                url: null
+                code: ''
+                reference: board
+                cmsPage: null
+                replace: 0
+                viewBag:
+                    locale:
+                        ar:
+                            title: ''
+                            url: ''
+                        fr:
+                            title: ''
+                            url: ''
+                    isHidden: '0'
+                    cssClass: ''
+                    isExternal: '0'
+            -
+                title: mainmenu.about.steering
+                nesting: 0
+                type: static-page
+                url: null
+                code: ''
+                reference: steering-committee
+                cmsPage: null
+                replace: 0
+                viewBag:
+                    locale:
+                        ar:
+                            title: ''
+                            url: ''
+                        fr:
+                            title: ''
+                            url: ''
+                    isHidden: '0'
+                    cssClass: ''
+                    isExternal: '0'
+            -
+                title: mainmenu.about.team
+                nesting: 0
+                type: static-page
+                url: null
+                code: ''
+                reference: team
+                cmsPage: null
+                replace: 0
+                viewBag:
+                    locale:
+                        ar:
+                            title: ''
+                            url: ''
+                        fr:
+                            title: ''
+                            url: ''
+                    isHidden: '0'
+                    cssClass: ''
+                    isExternal: '0'
+            -
+                title: mainmenu.about.work
+                nesting: 0
+                type: static-page
+                url: null
+                code: ''
+                reference: work-with-us
+                cmsPage: null
+                replace: 0
+                viewBag:
+                    locale:
+                        ar:
+                            title: ''
+                            url: ''
+                        fr:
+                            title: ''
+                            url: ''
+                    isHidden: '0'
+                    cssClass: ''
+                    isExternal: '0'
+    -
+        title: mainmenu.news
+        nesting: 0
+        type: static-page
+        url: null
+        code: ''
+        reference: topic-news
+        cmsPage: null
+        replace: 0
+        viewBag:
+            locale:
+                ar:
+                    title: ''
+                    url: ''
+                fr:
+                    title: ''
+                    url: ''
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+    -
+        title: mainmenu.network
+        nesting: 0
+        type: static-page
+        url: null
+        code: ''
+        reference: members
+        cmsPage: null
+        replace: 0
+        viewBag:
+            locale:
+                ar:
+                    title: ''
+                    url: ''
+                fr:
+                    title: ''
+                    url: ''
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+    -
+        title: mainmenu.programs
+        nesting: 0
+        type: static-page
+        url: null
+        code: ''
+        reference: topic-programs
+        cmsPage: null
+        replace: 0
+        viewBag:
+            locale:
+                ar:
+                    title: ''
+                    url: ''
+                fr:
+                    title: ''
+                    url: ''
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+    -
+        title: mainmenu.research
+        nesting: 0
+        type: static-page
+        url: null
+        code: ''
+        reference: topic-research
+        cmsPage: null
+        replace: 0
+        viewBag:
+            locale:
+                ar:
+                    title: ''
+                    url: ''
+                fr:
+                    title: ''
+                    url: ''
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+        items:
+            -
+                title: mainmenu.researchandpublications
+                nesting: 0
+                type: static-page
+                url: null
+                code: ''
+                reference: topic-research
+                cmsPage: null
+                replace: 0
+                viewBag:
+                    locale:
+                        ar:
+                            title: ''
+                            url: ''
+                        fr:
+                            title: ''
+                            url: ''
+                        de:
+                            title: ''
+                            url: ''
+                    isHidden: '0'
+                    cssClass: ''
+                    isExternal: '0'
+            -
+                title: mainmenu.resources
+                nesting: 0
+                type: static-page
+                url: null
+                code: ''
+                reference: topic-resources
+                cmsPage: null
+                replace: 0
+                viewBag:
+                    locale:
+                        ar:
+                            title: ''
+                            url: ''
+                        fr:
+                            title: ''
+                            url: ''
+                        de:
+                            title: ''
+                            url: ''
+                    isHidden: '0'
+                    cssClass: ''
+                    isExternal: '0'
+            -
+                title: mainmenu.malaffat
+                nesting: 0
+                type: static-page
+                url: null
+                code: ''
+                reference: malaffat
+                cmsPage: null
+                replace: 0
+                viewBag:
+                    locale:
+                        ar:
+                            title: ''
+                            url: ''
+                        fr:
+                            title: ''
+                            url: ''
+                        de:
+                            title: ''
+                            url: ''
+                    isHidden: '0'
+                    cssClass: ''
+                    isExternal: '0'
+    -
+        title: mainmenu.support
+        nesting: 0
+        type: static-page
+        url: null
+        code: ''
+        reference: support-naas
+        cmsPage: null
+        replace: 0
+        viewBag:
+            locale:
+                ar:
+                    title: ''
+                    url: ''
+                fr:
+                    title: ''
+                    url: ''
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+name: 'Main Menu'

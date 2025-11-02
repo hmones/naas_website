@@ -1,12 +1,16 @@
 ##
 description = "Default layout"
+[staticMenu]
+code = "main-menu"
+[cookiesBar]
+[sitePicker]
 ==
 <! DOCTYPE html>
-<html {% if activeLocale =='ar'%} dir="rtl" lang="ar" {% endif %}>
+<html {% if this.site.locale =='ar'%} dir="rtl" lang="ar" {% endif %}>
 
 <head>
     <title>NAAS network</title>
-    {% if activeLocale == 'ar' %}
+    {% if this.site.locale == 'ar' %}
     <link rel="stylesheet" href="{{['assets/dist/semantic.rtl.min.css','assets/css/styles.css','assets/css/rtl.css']|theme}}">
     {% else %}
     <link rel="stylesheet" href="{{['assets/dist/semantic.min.css','assets/css/styles.css']|theme}}">

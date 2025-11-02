@@ -1,0 +1,25 @@
+title = "GDPR"
+url = "/gdpr"
+layout = "default"
+is_hidden = 0
+
+[cookiesManage]
+
+[siteSearchInclude]
+==
+<style>
+    button {
+        background: #fdd2ba;
+        border: none;
+        padding: 10px;
+        margin-top: 20px;
+    }
+
+    button:hover {
+        background: #fdd2ba9e;
+        cursor: pointer;
+    }
+</style>
+<div class="ui form">
+    {% component 'cookiesManage' %}
+</div>

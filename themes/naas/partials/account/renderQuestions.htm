@@ -1,7 +1,7 @@
-<div class="{{(question.required) and (not question.cond_option_id) ? 'required':''}} {{question.add_css}} {{responses[question.id][0].prefilled ? 'prefilled':''}} field" 
-    id="field_{{question.id}}" 
+<div class="{{(question.required) and (not question.cond_option_id) ? 'required':''}} {{question.add_css}} {{responses[question.id][0].prefilled ? 'prefilled':''}} field"
+    id="field_{{question.id}}"
     type="{{question.type}}"
-    data-condition="{{question.cond_option_id}}" 
+    data-condition="{{question.cond_option_id}}"
     style="{{question.cond_option_id?'display:none;':''}}"
     data-required="{{question.required ? 'yes':'no'}}"
     data-theme="{{question.theme.display_order}}"
@@ -12,7 +12,7 @@
     {% endif %}>
     {% partial 'account/questions/header'%}
     <label for="q_{{question.id}}">
-        <i class="{{activeLocale == 'ar'? 'left':'right'}} caret red icon"></i> {{question.question}} &nbsp;
+        <i class="{{this.site.locale == 'ar'? 'left':'right'}} caret red icon"></i> {{question.question}} &nbsp;
         {% if question.description %}
         <div class="ui icon circular grey mini basic button questionTooltip" data-html="<p>{{question.description}}</p>" data-inverted="" data-variation="wide">
             <i class="question black icon"></i>

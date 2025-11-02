@@ -4,6 +4,17 @@ url = "/"
 layout = "home"
 is_hidden = 0
 ==
+<?php
+use Hmones\Website\Models\Topic;
+use Hmones\Website\Models\Slider;
+
+public function onStart(){
+$this['news'] = Topic::where('category',0)->orderBy('published_at','desc')->take(6)->get();
+$this['main_slides'] = Slider::where('position','main')->orderBy('display_order', 'asc')->get();
+$this['secondary_slides'] = Slider::where('position','main2')->orderBy('display_order', 'asc')->get();
+}
+?>
+==
 <div class="main-slider">
     {% for slide in main_slides %}
     <div class="ui placeholder basic segment slide">
@@ -35,16 +46,16 @@ is_hidden = 0
 <div class="ui container">
     <div class="ui stackable grid">
         <div class="column">
-            <div class="ui header">{{'Pages.Home.AboutSection.Header'|_}}</div>
+            <div class="ui header">{{'pages.home.aboutsection.header'|_}}</div>
             <div class="ui basic segment">
                 <p>
-                    {{'Pages.Home.AboutSection.Content'|_}}
+                    {{'pages.home.aboutsection.content'|_}}
                 </p>
             </div>
             <div class="ui divider"></div>
         </div>
     </div>
-    <h1 class="ui centered header" style="margin-bottom: 40px;">{{'Pages.Home.News'|_}}</h1>
+    <h1 class="ui centered header" style="margin-bottom: 40px;">{{'pages.home.news'|_}}</h1>
     <div class="ui {% if news.count() < 2 %} one {% else %} three {% endif %} stackable cards">
         {% for topic in news %}
         <div class="ui raised card" style="box-shadow:none;">
@@ -64,7 +75,7 @@ is_hidden = 0
 {% put scripts %}
 <script>
     $('.main-slider').slick({
-    {% if activeLocale == 'ar'%}
+    {% if this.site.locale == 'ar'%}
     rtl:true,
     {% endif %}
     dots:true,
