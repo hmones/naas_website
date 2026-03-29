@@ -8,13 +8,13 @@ static-pages:
     board: {  }
     support-naas: {  }
     topic-news: {  }
-    topic-programs: {  }
     topic-research: {  }
-    topic-resources: {  }
-    malaffat: {  }
+    malaffat:
+        articles: {  }
     topic-fellowship: {  }
     members: {  }
     privacy-policy: {  }
     impresum: {  }
     rrang: {  }
     vacantposition: {  }
+    topic-programs: {  }

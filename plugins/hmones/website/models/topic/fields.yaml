@@ -37,6 +37,15 @@ fields:
         size: large
         span: full
         type: richeditor
+    thumbnail:
+        label: Thumbnail
+        mode: image
+        useCaption: true
+        thumbOptions:
+            mode: auto
+            extension: auto
+        span: auto
+        type: fileupload
     image:
         label: Image
         mode: image

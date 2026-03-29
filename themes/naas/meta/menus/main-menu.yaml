@@ -12,10 +12,8 @@ items:
             locale:
                 ar:
                     title: ''
-                    url: ''
                 fr:
                     title: ''
-                    url: ''
             isHidden: '0'
             cssClass: ''
             isExternal: '0'
@@ -33,10 +31,8 @@ items:
                     locale:
                         ar:
                             title: ''
-                            url: ''
                         fr:
                             title: ''
-                            url: ''
                     isHidden: '0'
                     cssClass: ''
                     isExternal: '0'
@@ -53,10 +49,8 @@ items:
                     locale:
                         ar:
                             title: ''
-                            url: ''
                         fr:
                             title: ''
-                            url: ''
                     isHidden: '0'
                     cssClass: ''
                     isExternal: '0'
@@ -73,10 +67,8 @@ items:
                     locale:
                         ar:
                             title: ''
-                            url: ''
                         fr:
                             title: ''
-                            url: ''
                     isHidden: '0'
                     cssClass: ''
                     isExternal: '0'
@@ -93,30 +85,8 @@ items:
                     locale:
                         ar:
                             title: ''
-                            url: ''
                         fr:
                             title: ''
-                            url: ''
-                    isHidden: '0'
-                    cssClass: ''
-                    isExternal: '0'
-            -
-                title: mainmenu.about.steering
-                nesting: 0
-                type: static-page
-                url: null
-                code: ''
-                reference: steering-committee
-                cmsPage: null
-                replace: 0
-                viewBag:
-                    locale:
-                        ar:
-                            title: ''
-                            url: ''
-                        fr:
-                            title: ''
-                            url: ''
                     isHidden: '0'
                     cssClass: ''
                     isExternal: '0'
@@ -133,10 +103,8 @@ items:
                     locale:
                         ar:
                             title: ''
-                            url: ''
                         fr:
                             title: ''
-                            url: ''
                     isHidden: '0'
                     cssClass: ''
                     isExternal: '0'
@@ -153,10 +121,8 @@ items:
                     locale:
                         ar:
                             title: ''
-                            url: ''
                         fr:
                             title: ''
-                            url: ''
                     isHidden: '0'
                     cssClass: ''
                     isExternal: '0'
@@ -173,10 +139,8 @@ items:
             locale:
                 ar:
                     title: ''
-                    url: ''
                 fr:
                     title: ''
-                    url: ''
             isHidden: '0'
             cssClass: ''
             isExternal: '0'
@@ -193,10 +157,8 @@ items:
             locale:
                 ar:
                     title: ''
-                    url: ''
                 fr:
                     title: ''
-                    url: ''
             isHidden: '0'
             cssClass: ''
             isExternal: '0'
@@ -213,121 +175,54 @@ items:
             locale:
                 ar:
                     title: ''
-                    url: ''
                 fr:
                     title: ''
-                    url: ''
             isHidden: '0'
             cssClass: ''
             isExternal: '0'
     -
-        title: mainmenu.research
+        title: mainmenu.malaffat
         nesting: 0
         type: static-page
-        url: null
         code: ''
-        reference: topic-research
-        cmsPage: null
+        reference: malaffat
         replace: 0
         viewBag:
-            locale:
-                ar:
-                    title: ''
-                    url: ''
-                fr:
-                    title: ''
-                    url: ''
             isHidden: '0'
             cssClass: ''
             isExternal: '0'
+            locale:
+                ar:
+                    title: ملفات
+                fr:
+                    title: ''
         items:
             -
-                title: mainmenu.researchandpublications
+                title: Dossiers
                 nesting: 0
                 type: static-page
-                url: null
-                code: ''
-                reference: topic-research
-                cmsPage: null
-                replace: 0
-                viewBag:
-                    locale:
-                        ar:
-                            title: ''
-                            url: ''
-                        fr:
-                            title: ''
-                            url: ''
-                        de:
-                            title: ''
-                            url: ''
-                    isHidden: '0'
-                    cssClass: ''
-                    isExternal: '0'
-            -
-                title: mainmenu.resources
-                nesting: 0
-                type: static-page
-                url: null
-                code: ''
-                reference: topic-resources
-                cmsPage: null
-                replace: 0
-                viewBag:
-                    locale:
-                        ar:
-                            title: ''
-                            url: ''
-                        fr:
-                            title: ''
-                            url: ''
-                        de:
-                            title: ''
-                            url: ''
-                    isHidden: '0'
-                    cssClass: ''
-                    isExternal: '0'
-            -
-                title: mainmenu.malaffat
-                nesting: 0
-                type: static-page
-                url: null
                 code: ''
                 reference: malaffat
-                cmsPage: null
                 replace: 0
                 viewBag:
-                    locale:
-                        ar:
-                            title: ''
-                            url: ''
-                        fr:
-                            title: ''
-                            url: ''
-                        de:
-                            title: ''
-                            url: ''
                     isHidden: '0'
                     cssClass: ''
                     isExternal: '0'
-    -
-        title: mainmenu.support
-        nesting: 0
-        type: static-page
-        url: null
-        code: ''
-        reference: support-naas
-        cmsPage: null
-        replace: 0
-        viewBag:
-            locale:
-                ar:
-                    title: ''
-                    url: ''
-                fr:
-                    title: ''
-                    url: ''
-            isHidden: '0'
-            cssClass: ''
-            isExternal: '0'
+                    locale:
+                        ar:
+                            title: الملفات
+            -
+                title: Articles
+                nesting: 0
+                type: static-page
+                code: ''
+                reference: articles
+                replace: 0
+                viewBag:
+                    isHidden: '0'
+                    cssClass: ''
+                    isExternal: '0'
+                    locale:
+                        ar:
+                            title: المقالات
 name: 'Main Menu'
